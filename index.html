@@ -736,7 +736,7 @@ document.addEventListener('click',async e=>{
   toast(ok?(b.dataset.label||'Teks')+' disalin ✓':'Gagal menyalin, tekan lama untuk menyalin manual');
   if(ok){const h=b.innerHTML;b.classList.add('done');b.innerHTML='Tersalin ✓';setTimeout(()=>{b.classList.remove('done');b.innerHTML=h},1600)}
 });
-$('#shareCopy').addEventListener('click',async e=>{
+($('#shareCopy')||document.createElement('i')).addEventListener('click',async e=>{
   const u=location.origin+location.pathname; const ok=await copyText(location.protocol==='file:'?location.href.split('?')[0]:u);
   toast(ok?'Link undangan disalin ✓':'Gagal menyalin');
 });
